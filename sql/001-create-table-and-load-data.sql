@@ -8,8 +8,8 @@ CREATE TABLE teams (
   PRIMARY KEY(id)
 );
 
-INSERT INTO teams (id, name, league, founding_year) VALUES (1, "Liverpool FC", "Premier League", 1892);
-INSERT INTO teams (id, name, league, founding_year) VALUES (2, "FC Barcelona", "LaLiga", 1899);
-INSERT INTO teams (id, name, league, founding_year) VALUES (3, "Paris Saint-Germain FC", "LIGUE 1", 1932);
-INSERT INTO teams (id, name, league, founding_year) VALUES (4, "Internazionale Milano", "SERIE A", 1898);
-INSERT INTO teams (id, name, league, founding_year) VALUES (5, "FC Bayern Munchen", "BUNDESLIGA", 1900);
+INSERT INTO teams (id, name, league, founding_year) VALUES (1, "liverpoolfc", "PremierLeague", 1892);
+INSERT INTO teams (id, name, league, founding_year) VALUES (2, "fcbarcelona", "LaLiga", 1899);
+INSERT INTO teams (id, name, league, founding_year) VALUES (3, "parissaint-germainfc", "LIGUE1", 1932);
+INSERT INTO teams (id, name, league, founding_year) VALUES (4, "internazionalemilano", "SERIEA", 1898);
+INSERT INTO teams (id, name, league, founding_year) VALUES (5, "fcbayernmunchen", "BUNDESLIGA", 1900);

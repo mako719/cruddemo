@@ -8,7 +8,7 @@ import lombok.Getter;
 public class Team {
     private int id;
 
-    private String name;
+    private String team;
 
     private String league;
 
