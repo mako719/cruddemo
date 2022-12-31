@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class TeamServiceImpl implements TeamService{
-    private TeamMapper teamMapper;
+    private final TeamMapper teamMapper;
 
     @Autowired
     public TeamServiceImpl(TeamMapper teamMapper) {

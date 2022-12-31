@@ -10,6 +10,7 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class ExceptionHandler {
+
     @org.springframework.web.bind.annotation.ExceptionHandler(value = ResourceNotFoundException.class)
     public ResponseEntity<Map<String, String>> handleNoResourceFound(
             ResourceNotFoundException e, HttpServletRequest request) {
@@ -21,6 +22,6 @@ public class ExceptionHandler {
                 "message", e.getMessage(),
                 "path", request.getRequestURI());
 
-        return new ResponseEntity(body, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 }

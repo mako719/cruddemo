@@ -22,7 +22,7 @@ public class TeamController {
     public List<Team> getTames() {
         return teamService.findAll();
     }
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Team getTeams(@PathVariable("id") int id) throws Exception {
         return teamService.findById(id);
     }
