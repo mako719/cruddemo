@@ -22,4 +22,9 @@ public class TeamServiceImpl implements TeamService{
     public Team findById(int id) {
         return this.teamMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("resource not found"));
     }
+
+    @Override
+    public void create(String team) {
+
+    }
 }

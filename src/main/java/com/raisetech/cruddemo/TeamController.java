@@ -1,17 +1,20 @@
 package com.raisetech.cruddemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/teams")
 public class TeamController {
     private final TeamService teamService;
+    private final AtomicLong counter = new AtomicLong();
 
     @Autowired
     public TeamController(TeamService teamService) {
@@ -25,5 +28,15 @@ public class TeamController {
     @GetMapping("/{id}")
     public Team getTeams(@PathVariable("id") int id) throws Exception {
         return teamService.findById(id);
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<Integer, String>> create(@RequestBody CreateForm form){
+        int id = (int) counter.incrementAndGet();
+        URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
+                .path("/teams/" + id)
+                .build()
+                .toUri();
+        return ResponseEntity.created(url).body(Map.of(id, "チームが登録されました。"));
     }
 }

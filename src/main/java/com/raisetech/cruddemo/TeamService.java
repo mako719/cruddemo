@@ -6,4 +6,6 @@ public interface TeamService {
     List<Team> findAll();
 
     Team findById(int id) throws Exception;
+
+    void create(String team);
 }
