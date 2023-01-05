@@ -24,7 +24,7 @@ public class TeamServiceImpl implements TeamService{
     }
 
     @Override
-    public void create(String team) {
-
+    public void createTeam(CreateForm form){
+        teamMapper.createTeam(form);
     }
 }

@@ -7,5 +7,5 @@ public interface TeamService {
 
     Team findById(int id) throws Exception;
 
-    void create(String team);
+    void createTeam(CreateForm form);
 }

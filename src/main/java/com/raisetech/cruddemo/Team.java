@@ -8,10 +8,10 @@ import lombok.Getter;
 public class Team {
     private int id;
 
-    private String team;
+    private String name;
 
     private String league;
 
-    private int foundingYear;
+    private int founding_year;
 
 }

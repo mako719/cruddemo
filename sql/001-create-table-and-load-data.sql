@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS team;
+DROP TABLE IF EXISTS teams;
 
 CREATE TABLE teams (
   id int unsigned AUTO_INCREMENT,

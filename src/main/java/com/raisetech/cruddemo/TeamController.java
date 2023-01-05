@@ -31,10 +31,10 @@ public class TeamController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Map<Integer, String>> create(@RequestBody CreateForm form){
+    public ResponseEntity<Map<Integer, String>> createTeam(@RequestBody CreateForm form){
         int id = (int) counter.incrementAndGet();
         URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
-                .path("/teams/" + id)
+                .path("/name/" + id)
                 .build()
                 .toUri();
         return ResponseEntity.created(url).body(Map.of(id, "チームが登録されました。"));
