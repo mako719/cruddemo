@@ -2,9 +2,9 @@ package com.raisetech.cruddemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
@@ -26,12 +26,12 @@ public class TeamController {
         return teamService.findAll();
     }
     @GetMapping("/{id}")
-    public Team getTeams(@PathVariable("id") int id) throws Exception {
+    public Team getTeams(@Validated @PathVariable("id") int id) throws Exception {
         return teamService.findById(id);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Map<Integer, String>> createTeam(@RequestBody CreateForm form){
+    public ResponseEntity<Map<Integer, String>> createTeam(@Validated @RequestBody CreateForm form){
         int id = (int) counter.incrementAndGet();
         URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
                 .path("/name/" + id)
