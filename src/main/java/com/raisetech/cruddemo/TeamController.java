@@ -1,7 +1,6 @@
 package com.raisetech.cruddemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.EnableMBeanExport;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +10,6 @@ import java.io.Serializable;
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class TeamController {
@@ -21,8 +19,6 @@ public class TeamController {
     public TeamController(TeamService teamService) {
         this.teamService = teamService;
     }
-
-    private final AtomicLong counter = new AtomicLong();
 
     @GetMapping
     public List<Team> getTames() {
@@ -36,6 +32,7 @@ public class TeamController {
 
     @PostMapping("/teams")
     public ResponseEntity<Map<String, Serializable>> createTeam(@Validated @RequestBody CreateForm form, UriComponentsBuilder uriBuilder) {
+        teamService.createTeam(form);
         int id = form.getId();
         URI url = uriBuilder.path("/name/" + id).
                 build().

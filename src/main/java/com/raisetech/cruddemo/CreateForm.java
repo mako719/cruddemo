@@ -17,5 +17,5 @@ public class CreateForm {
 
     @NotNull
     private int foundingYear;
-
 }
+
