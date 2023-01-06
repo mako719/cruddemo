@@ -12,6 +12,6 @@ public class Team {
 
     private String league;
 
-    private int founding_year;
+    private int foundingYear;
 
 }
