@@ -2,6 +2,7 @@ package com.raisetech.cruddemo;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import javax.management.ValueExp;
@@ -16,6 +17,7 @@ public interface TeamMapper {
     @Select("SELECT * FROM teams WHERE id = #{id}")
     Optional<Team> findById(int id);
 
-    @Insert("INSERT INTO teams (id, name, league, founding_year) VALUES (#{id}, #{name}, #{league}, #{founding_year})")
+    @Insert("INSERT INTO teams (id, name, league, founding_year) VALUES (#{id}, #{name}, #{league}, #{foundingYear})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     void createTeam(CreateForm form);
 }
