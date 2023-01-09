@@ -10,4 +10,6 @@ public interface TeamService {
     void createTeam(CreateForm form);
 
     void updateTeam(int id, UpdateForm form);
+
+    void deleteTeam(int id);
 }

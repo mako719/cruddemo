@@ -20,4 +20,7 @@ public interface TeamMapper {
 
     @Update("UPDATE teams SET name = #{name}, league = #{league}, founding_year = #{foundingYear} WHERE id = #{id}")
     void updateTeam(UpdateForm form);
+
+    @Delete("DELETE FROM teams WHERE id = #{id}")
+    void deleteTeam(int id);
 }

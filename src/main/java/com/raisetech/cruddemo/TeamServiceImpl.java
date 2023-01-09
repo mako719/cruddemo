@@ -34,4 +34,10 @@ public class TeamServiceImpl implements TeamService {
         teamMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("resource not found"));
         teamMapper.updateTeam(form);
     }
+
+    @Override
+    public void deleteTeam(int id){
+        teamMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("resource not found"));
+        teamMapper.deleteTeam(id);
+    }
 }

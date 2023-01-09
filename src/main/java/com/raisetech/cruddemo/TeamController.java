@@ -48,4 +48,10 @@ public class TeamController {
         teamService.updateTeam(id, form);
         return ResponseEntity.ok(Map.of("message", "チームを更新しました。"));
     }
+
+    @DeleteMapping("/teams/{id}")
+    public ResponseEntity<Map<String, String>> deleteTeam(@PathVariable int id){
+        teamService.deleteTeam(id);
+        return ResponseEntity.ok(Map.of("message", "チームを削除しました。"));
+    }
 }
