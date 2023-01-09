@@ -1,17 +1,21 @@
 package com.raisetech.cruddemo;
 
-import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
-public class Team {
+public class CreateForm {
+
     private int id;
 
+    @NotBlank
     private String name;
 
+    @NotBlank
     private String league;
 
+    @NotNull
     private int foundingYear;
-
 }
+

@@ -6,4 +6,10 @@ public interface TeamService {
     List<Team> findAll();
 
     Team findById(int id) throws Exception;
+
+    void createTeam(CreateForm form);
+
+    void updateTeam(int id, UpdateForm form);
+
+    void deleteTeam(int id);
 }
