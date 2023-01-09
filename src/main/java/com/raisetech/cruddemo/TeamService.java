@@ -8,4 +8,6 @@ public interface TeamService {
     Team findById(int id) throws Exception;
 
     void createTeam(CreateForm form);
+
+    void updateTeam(int id, UpdateForm form);
 }

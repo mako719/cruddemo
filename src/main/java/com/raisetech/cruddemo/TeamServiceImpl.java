@@ -28,4 +28,10 @@ public class TeamServiceImpl implements TeamService {
     public void createTeam(CreateForm form) {
         teamMapper.createTeam(form);
     }
+
+    @Override
+    public void updateTeam(int id, UpdateForm form){
+        teamMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("resource not found"));
+        teamMapper.updateTeam(form);
+    }
 }
